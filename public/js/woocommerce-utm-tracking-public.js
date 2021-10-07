@@ -1,7 +1,7 @@
-(function( $ ) {
+/*(function( $ ) {
 	'use strict';
 
-	/**
+	/!**
 	 * All of the code for your public-facing JavaScript source
 	 * should reside in this file.
 	 *
@@ -27,6 +27,30 @@
 	 * single DOM-ready or window-load handler for a particular page.
 	 * Although scripts in the WordPress core, Plugins and Themes may be
 	 * practising this, we should strive to set a better example in our own work.
-	 */
+	 *!/
 
-})( jQuery );
+})( jQuery );*/
+
+
+
+var queryForm = function(settings){
+	var reset = settings && settings.reset ? settings.reset : false;
+	var self = window.location.toString();
+	var querystring = self.split("?");
+	if (querystring.length > 1) {
+		var pairs = querystring[1].split("&");
+		for (i in pairs) {
+			var keyval = pairs[i].split("=");
+			if (reset || localStorage.getItem(keyval[0]) === null) {
+				localStorage.setItem(keyval[0], decodeURIComponent(keyval[1]));
+			}
+		}
+	}
+	var hiddenFields = document.querySelectorAll("input[type=hidden], input[type=text]");
+	for (var i=0; i<hiddenFields.length; i++) {
+		var param = localStorage.getItem(hiddenFields[i].name);
+		if (param) document.getElementsByName(hiddenFields[i].name)[0].value = param;
+	}
+}
+
+setTimeout(function(){queryForm();}, 3000);

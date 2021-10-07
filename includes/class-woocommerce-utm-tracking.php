@@ -215,4 +215,25 @@ class Woocommerce_Utm_Tracking {
 		return $this->version;
 	}
 
+    /**
+     * Check to make sure WooCommerce is enabled
+     *
+     * @return bool
+     */
+    public static function woocommerce_enabled(){
+        return class_exists( 'WooCommerce' );
+    }
+
+	public static function get_tracking_meta_keys(){
+		return array(
+			'utm_source',
+			'utm_campaign',
+			'utm_content',
+			'utm_medium',
+			'utm_term',
+			'publisher_id',
+			'offer_id',
+		);
+	}
+
 }
