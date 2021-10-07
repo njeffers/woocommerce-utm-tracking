@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       WooCommerce UTM Tracking
  * Plugin URI:        https://nickjeffers.com
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Adds UTM Tracking to WooCommerce Orders
  * Version:           1.0.0
  * Author:            Nick Jeffers
  * Author URI:        https://nickjeffers.com

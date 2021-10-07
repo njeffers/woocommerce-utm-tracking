@@ -57,8 +57,9 @@ class Woocommerce_Utm_Tracking_Admin {
 		add_action( 'add_meta_boxes', array($this, 'woocomerce_utm_add_order_tracking_metabox' ) );
 		add_action( 'wp_ajax_add_utms_to_order', array($this, 'woocomerce_utm_add_utms_to_order' ) );
 		add_action( 'wp_ajax_nopriv_add_utms_to_order', array($this, 'woocomerce_utm_add_utms_to_order' ) );
-//		add_action( "wp_ajax_add_utms_to_order", "woocomerce_utm_add_utms_to_order" );
-//		add_action( "wp_ajax_nopriv_add_utms_to_order", "woocomerce_utm_add_utms_to_order" );
+		add_action( 'manage_edit-shop_order_columns', array($this, 'woocommerce_utm_add_utm_source_column_header' ), 20 );
+		add_action( 'manage_shop_order_posts_custom_column', array( $this, 'woocommerce_utm_add_utm_source_column_content' ) );
+
 
 	}
 
@@ -203,6 +204,36 @@ class Woocommerce_Utm_Tracking_Admin {
 
 		return;
 
+	}
+
+
+	public function woocommerce_utm_add_utm_source_column_header( $columns )
+	{
+
+		$new_columns = array();
+
+		foreach ( $columns as $column_name => $column_info ) {
+
+			$new_columns[ $column_name ] = $column_info;
+
+			if ( 'shipping_address' === $column_name ) {
+				$new_columns[ 'utm_source' ] = __( 'UTM Source', 'my-textdomain' );
+			}
+		}
+
+		return $new_columns;
+	}
+
+	public function woocommerce_utm_add_utm_source_column_content( $column )
+	{
+		global $post;
+
+		if ( 'utm_source' === $column ) {
+			$order = wc_get_order( $post->ID );
+			$value = $order->get_meta( 'woocommerce_utm_utm_source' );
+
+			echo $value;
+		}
 	}
 
 
