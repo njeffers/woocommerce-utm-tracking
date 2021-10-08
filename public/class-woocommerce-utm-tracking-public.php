@@ -52,7 +52,6 @@ class Woocommerce_Utm_Tracking_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
-		add_action('wp_footer', array( $this, 'woocommerce_utm_builder' ) );
 
 	}
 
@@ -99,7 +98,7 @@ class Woocommerce_Utm_Tracking_Public {
 		 */
 
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/woocommerce-utm-tracking-public.js', '', $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/woocommerce-utm-tracking-public.js', array('jquery'), $this->version, true );
 
 
         if( ! Woocommerce_Utm_Tracking::woocommerce_enabled() || ! is_wc_endpoint_url( 'order-received' ) ){
@@ -111,134 +110,26 @@ class Woocommerce_Utm_Tracking_Public {
         // Get the order ID
         $order_id  = absint( $wp->query_vars['order-received'] );
 
-        wp_localize_script( $this->plugin_name, 'utm_data', array(
+        $utm_data = array(
             'order_id' => $order_id,
-            'nonce' => wp_create_nonce('woocommerce_utm_' . $order_id)
-        ) );
+            'nonce' => wp_create_nonce('woocommerce_utm_' . $order_id),
+            'ajaxurl' => admin_url( 'admin-ajax.php' ),
+            'variableKeys' => wp_json_encode( Woocommerce_Utm_Tracking::get_tracking_meta_keys() )
+        );
 
-	}
+		$script_before = "var utm_data = " . wp_json_encode( $utm_data ) . ';';
 
-
-	public function woocommerce_utm_builder( )
-	{
-
-
-		if( ! Woocommerce_Utm_Tracking::woocommerce_enabled() || ! is_order_received_page() ){
-			return;
-		}
-
-		global $wp;
-
-		// Get the order ID
-		$order_id  = absint( $wp->query_vars['order-received'] );
-
-		?>
-
-		<script type="text/javascript">
-
-            function woocommerceUtmGetLocalStorageVars(){
-
-                if( undefined === window.localStorage.getItem('_dataLayerHistory') ){
-                    return false;
-                }
-
-                let dataLayerHistory = JSON.parse( window.localStorage.getItem('_dataLayerHistory') );
-
-                return dataLayerHistory ?? false;
-
-            }
-
-            function woocommerceUtmMaybeGetUtmSourceFromLocalStorage(){
-
-                let localStorageVars = woocommerceUtmGetLocalStorageVars();
-                if (localStorageVars) {
-                    let utmSource = localStorageVars.model.utm_source;
-
-                    if( utmSource === undefined || utmSource === 'undefined' ){
-                        return false;
-                    }
-                    return utmSource;
-                }
-
-                return false;
-            }
-
-            function woocommerceUtmMaybeGetVariableFromLocalStorage( variableName ){
+		wp_add_inline_script($this->plugin_name, $script_before, 'before');
 
 
-                if( undefined === window.localStorage.getItem(variableName) ){
-                    return false;
-                }
-
-                return window.localStorage.getItem(variableName);
-
-                let localStorageVars = woocommerceUtmGetLocalStorageVars();
-                if (localStorageVars) {
-                    let variableValue = localStorageVars.model[variableName];
-
-                    if( variableValue === undefined || variableValue === 'undefined' ){
-                        return false;
-                    }
-
-                    return variableValue;
-                }
-
-                return false;
-            }
-
-
-            function passVariablesToOrder( variables ){
-
-                jQuery.ajax( {
-                    // url: wp_ajax_object.ajaxurl,
-                    url: '<?php echo admin_url( 'admin-ajax.php' ); ?>',
-                    method: 'POST',
-                    dataType: 'html',
-                    data: {
-                        'action': 'add_utms_to_order',
-                        'order_id': utm_data.order_id,
-                        'variables': variables,
-                        'nonce' : utm_data.nonce
-
-                    }
-                } ).done( function( response ) {
-                    console.log("Sent UTM");
-                } );
-
-            }
-
-
-            variableKeys = [
-				<?php
-
-//				if( function_exists(Woocommerce_Utm_Tracking::get_tracking_meta_keys() ) ){
-					foreach( Woocommerce_Utm_Tracking::get_tracking_meta_keys() as $key ){
-						echo "'" . $key . "',";
-//					}
-				}
-				?>
-            ];
-
-            variableToReturn = {};
-
-
-            Object.keys(variableKeys).forEach(function(key) {
-
-                keyExists = woocommerceUtmMaybeGetVariableFromLocalStorage(variableKeys[key]);
-                if ( keyExists ) {
-                    variableToReturn[variableKeys[key]] = keyExists;
-                }
-
-
-            });
+        $script_after = '            
+            variableToReturn = getVariablesArray();
 
             if( Object.keys(variableToReturn).length > 0 ){
-                console.log("passing variables along");
                 passVariablesToOrder( variableToReturn );
-            }
+            }';
 
-		</script>
-		<?php
+		wp_add_inline_script($this->plugin_name, $script_after, 'after');
 
 	}
 

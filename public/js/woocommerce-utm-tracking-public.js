@@ -54,3 +54,103 @@ var queryForm = function(settings){
 }
 
 setTimeout(function(){queryForm();}, 3000);
+
+
+
+
+function woocommerceUtmGetLocalStorageVars(){
+
+	if( undefined === window.localStorage.getItem('_dataLayerHistory') ){
+		return false;
+	}
+
+	let dataLayerHistory = JSON.parse( window.localStorage.getItem('_dataLayerHistory') );
+
+	return dataLayerHistory ?? false;
+
+}
+
+function woocommerceUtmMaybeGetUtmSourceFromLocalStorage(){
+
+	let localStorageVars = woocommerceUtmGetLocalStorageVars();
+	if (localStorageVars) {
+		let utmSource = localStorageVars.model.utm_source;
+
+		if( utmSource === undefined || utmSource === 'undefined' ){
+			return false;
+		}
+		return utmSource;
+	}
+
+	return false;
+}
+
+function woocommerceUtmMaybeGetVariableFromLocalStorage( variableName ){
+
+
+	if( undefined === window.localStorage.getItem(variableName) ){
+		return false;
+	}
+
+	return window.localStorage.getItem(variableName);
+
+	let localStorageVars = woocommerceUtmGetLocalStorageVars();
+	if (localStorageVars) {
+		let variableValue = localStorageVars.model[variableName];
+
+		if( variableValue === undefined || variableValue === 'undefined' ){
+			return false;
+		}
+
+		return variableValue;
+	}
+
+	return false;
+}
+
+
+function passVariablesToOrder( variables ){
+
+	jQuery.ajax( {
+		url: utm_data.ajaxurl,
+		method: 'POST',
+		dataType: 'html',
+		data: {
+			'action': 'add_utms_to_order',
+			'order_id': utm_data.order_id,
+			'variables': variables,
+			'nonce' : utm_data.nonce
+
+		}
+	} ).done( function( response ) {
+		console.log("Sent UTM");
+	} );
+
+}
+
+
+function getVariablesArray(){
+
+
+	variableToReturn = {};
+
+
+	// console.log( "utm_data.variableKeys");
+	// console.log(utm_data.variableKeys);
+
+	variableKeysObject = JSON.parse( utm_data.variableKeys );
+
+	Object.keys(variableKeysObject).forEach(function(key) {
+		// console.log(key);
+
+		keyExists = woocommerceUtmMaybeGetVariableFromLocalStorage(variableKeysObject[key]);
+		if ( keyExists ) {
+			variableToReturn[variableKeysObject[key]] = keyExists;
+		}
+
+
+	});
+
+	return variableToReturn;
+
+}
