@@ -136,8 +136,6 @@ class Woocommerce_Utm_Tracking_Public {
 
 		<script type="text/javascript">
 
-            console.log("variable_start");
-
             function woocommerceUtmGetLocalStorageVars(){
 
                 if( undefined === window.localStorage.getItem('_dataLayerHistory') ){
@@ -190,8 +188,6 @@ class Woocommerce_Utm_Tracking_Public {
 
 
             function passVariablesToOrder( variables ){
-                console.log("variables");
-                console.log(variables);
 
                 jQuery.ajax( {
                     // url: wp_ajax_object.ajaxurl,
@@ -236,8 +232,6 @@ class Woocommerce_Utm_Tracking_Public {
 
             });
 
-            console.log('variableToReturn:');
-            console.log( JSON.stringify( variableToReturn ) );
             if( Object.keys(variableToReturn).length > 0 ){
                 console.log("passing variables along");
                 passVariablesToOrder( variableToReturn );
