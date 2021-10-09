@@ -167,15 +167,16 @@ class Woocommerce_Utm_Tracking_Admin {
 	public function woocomerce_utm_add_utms_to_order()
 	{
 
-		$order_id   = (int) $_REQUEST[ 'order_id' ];
-		$variables = wc_clean( $_REQUEST[ 'variables' ] );
-		$nonce      = $_REQUEST[ 'nonce' ];
+		$order_id   = sanitize_text_field( (int) $_REQUEST[ 'order_id' ] );
+//		$variables = $_REQUEST[ 'variables' ];
+		$variables = $_REQUEST[ 'variables' ];
+		$nonce      = sanitize_text_field( $_REQUEST[ 'nonce' ] );
 
 		if ( ! $order_id || ! $variables || ! $nonce ) {
 			wp_die( __( 'Missing required values.', 'woocommerce' ) );
 		}
 
-		if ( ! wp_verify_nonce( wc_clean( $nonce ), 'woocommerce_utm_' . $order_id ) ) {
+		if ( ! wp_verify_nonce( sanitize_text_field( $nonce ), 'woocommerce_utm_' . $order_id ) ) {
 			wp_die( __( 'Nonce Failed.', 'woocommerce' ) );
 		}
 
@@ -185,24 +186,29 @@ class Woocommerce_Utm_Tracking_Admin {
 		$utm_tracking_keys = Woocommerce_Utm_Tracking::get_tracking_meta_keys();
 
 		foreach( $variables as $name => $value ){
-
-			// new key, who dis? - make sure it's an approved key...
-			if( ! in_array( $name, $utm_tracking_keys ) ){
-				continue;
-			}
-
-			// dont allow it to be overwritten if it's already set
-			if ( get_post_meta( $order_id, $name ) ) {
-				// continue;
-			}
-
-			update_post_meta( $order_id, 'woocommerce_utm_' . $name, $value );
+			add_meta_key_to_order( $order_id, $name, $value, $utm_tracking_keys );
 
 		}
 
 		do_action( 'woocommerce_utm_variables_added_to_order', $order_id, $variables );
 
 		return;
+
+	}
+
+	public function add_meta_key_to_order( $order_id, $name, $value, $utm_tracking_keys ){
+
+		// new key, who dis? - make sure it's an approved key...
+		if( ! in_array( $name, $utm_tracking_keys ) ){
+			return false;
+		}
+
+		// don't allow it to be overwritten if it's already set
+		if ( get_post_meta( $order_id, $name ) ) {
+			return false;
+		}
+
+		return update_post_meta( $order_id, 'woocommerce_utm_' . $name, $value );
 
 	}
 
