@@ -22,7 +22,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="7e285def-da0c-448f-b460-79cb540ece65" name="localhost" />
@@ -75,8 +74,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/bootstrap.php" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -88,26 +88,55 @@
       <recent name="D:\wamp64\www\wordpress\wp-content\plugins\woocommerce-utm-tracking\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.phpunit.xml.dist">
-    <configuration name="Test_Sample.test_example" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Test_Sample" file="$PROJECT_DIR$/tests/class-test-sample.php" method="test_example" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.Test_UTM_add_meta_key_to_order">
+    <configuration name="Test_Sample" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" scope="Class" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_Sample.test_add_meta_key_to_order" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order" scope="Method" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_Sample.test_add_meta_key_to_order__add_valid_key" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order__add_valid_key" scope="Method" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_Sample.test_add_meta_key_to_order__dont_allow_metas_to_be_overwritten" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order__dont_allow_metas_to_be_overwritten" scope="Method" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_Sample.test_add_meta_key_to_order__failure_adding_invalid_key" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order__failure_adding_invalid_key" scope="Method" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UTM_add_meta_key_to_order" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test_UTM_add_meta_key_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" />
       <method v="2" />
     </configuration>
-    <configuration name="Unnamed" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" nameIsGenerated="true" filter_connections="FILTER" server_name="localhost" session_id="PHPSTORM">
+    <configuration name="PHPUNIT" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" filter_connections="FILTER" server_name="localhost" session_id="PHPSTORM">
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHP Remote Debug.Unnamed" />
+      <item itemvalue="PHP Remote Debug.PHPUNIT" />
       <item itemvalue="PHPUnit.phpunit.xml.dist" />
-      <item itemvalue="PHPUnit.Test_Sample.test_example" />
+      <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order" />
+      <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__add_valid_key" />
+      <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__failure_adding_invalid_key" />
+      <item itemvalue="PHPUnit.Test_Sample" />
+      <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__dont_allow_metas_to_be_overwritten" />
+      <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.Test_Sample.test_example" />
+        <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order" />
+        <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__dont_allow_metas_to_be_overwritten" />
+        <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__add_valid_key" />
+        <item itemvalue="PHPUnit.Test_Sample" />
+        <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order" />
       </list>
     </recent_temporary>
   </component>
@@ -119,7 +148,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633585677921</updated>
-      <workItem from="1633585679120" duration="24958000" />
+      <workItem from="1633585679120" duration="31645000" />
     </task>
     <servers />
   </component>
@@ -130,11 +159,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/tests/class-test-sample.php</url>
-          <line>41</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/admin/class-woocommerce-utm-tracking-admin.php</url>
+          <line>169</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/admin/class-woocommerce-utm-tracking-admin.php</url>
+          <line>201</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/woocommerce_utm_tracking@phpunit_xml_dist.xml" NAME="phpunit.xml.dist Coverage Results" MODIFIED="1633749932443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
