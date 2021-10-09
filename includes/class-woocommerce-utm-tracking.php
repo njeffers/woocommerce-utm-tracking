@@ -225,7 +225,7 @@ class Woocommerce_Utm_Tracking {
     }
 
 	public static function get_tracking_meta_keys(){
-		return array(
+		return apply_filters( 'get_tracking_meta_keys', array(
 			'utm_source',
 			'utm_campaign',
 			'utm_content',
@@ -233,7 +233,7 @@ class Woocommerce_Utm_Tracking {
 			'utm_term',
 			'publisher_id',
 			'offer_id',
-		);
+		) );
 	}
 
 }

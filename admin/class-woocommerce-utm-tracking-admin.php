@@ -124,7 +124,7 @@ class Woocommerce_Utm_Tracking_Admin {
 
 
 
-	public function woocommerce_utm_add_order_tracking_metabox_callback( )
+	public function woocommerce_utm_add_order_tracking_metabox_callback()
 	{
 
         global $post;

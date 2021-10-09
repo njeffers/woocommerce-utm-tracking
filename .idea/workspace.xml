@@ -101,9 +101,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHPUnit.Test_Sample.test_example" />
-      <item itemvalue="PHPUnit.phpunit.xml.dist" />
       <item itemvalue="PHP Remote Debug.Unnamed" />
+      <item itemvalue="PHPUnit.phpunit.xml.dist" />
+      <item itemvalue="PHPUnit.Test_Sample.test_example" />
     </list>
     <recent_temporary>
       <list>
@@ -119,7 +119,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633585677921</updated>
-      <workItem from="1633585679120" duration="21666000" />
+      <workItem from="1633585679120" duration="24958000" />
     </task>
     <servers />
   </component>
