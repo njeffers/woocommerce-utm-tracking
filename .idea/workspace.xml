@@ -81,6 +81,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\wamp64\www\wordpress\wp-content\plugins\woocommerce-utm-tracking\tests" />
       <recent name="D:\wamp64\www\wordpress\wp-content\plugins\woocommerce-utm-tracking" />
       <recent name="D:\wamp64\www\wordpress\wp-content\plugins\woocommerce-utm-tracking\bin" />
     </key>
@@ -88,29 +89,29 @@
       <recent name="D:\wamp64\www\wordpress\wp-content\plugins\woocommerce-utm-tracking\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.Test_UTM_add_meta_key_to_order">
-    <configuration name="Test_Sample" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" scope="Class" use_alternative_bootstrap_file="true" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_Sample.test_add_meta_key_to_order" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order" scope="Method" use_alternative_bootstrap_file="true" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_Sample.test_add_meta_key_to_order__add_valid_key" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order__add_valid_key" scope="Method" use_alternative_bootstrap_file="true" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_Sample.test_add_meta_key_to_order__dont_allow_metas_to_be_overwritten" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order__dont_allow_metas_to_be_overwritten" scope="Method" use_alternative_bootstrap_file="true" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_nonce_bad">
     <configuration name="Test_Sample.test_add_meta_key_to_order__failure_adding_invalid_key" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order__failure_adding_invalid_key" scope="Method" use_alternative_bootstrap_file="true" />
       <method v="2" />
     </configuration>
     <configuration name="Test_UTM_add_meta_key_to_order" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Test_UTM_add_meta_key_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UTM_add_utms_to_order" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" scope="Class" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_fail_if_nonce_bad" scope="Method" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UTM_add_utms_to_order.test_utm_add_utms_to_order_dies" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_utm_add_utms_to_order_dies" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UTM_add_utms_to_order.test_utm_add_utms_to_order_fails_if_missing_order_id" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_utm_add_utms_to_order_fails_if_missing_order_id" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -123,20 +124,20 @@
     <list>
       <item itemvalue="PHP Remote Debug.PHPUNIT" />
       <item itemvalue="PHPUnit.phpunit.xml.dist" />
-      <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order" />
-      <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__add_valid_key" />
       <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__failure_adding_invalid_key" />
-      <item itemvalue="PHPUnit.Test_Sample" />
-      <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__dont_allow_metas_to_be_overwritten" />
       <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_utm_add_utms_to_order_dies" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_utm_add_utms_to_order_fails_if_missing_order_id" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" />
+        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_utm_add_utms_to_order_fails_if_missing_order_id" />
+        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_utm_add_utms_to_order_dies" />
+        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order" />
         <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order" />
-        <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__dont_allow_metas_to_be_overwritten" />
-        <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__add_valid_key" />
-        <item itemvalue="PHPUnit.Test_Sample" />
-        <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +149,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633585677921</updated>
-      <workItem from="1633585679120" duration="31645000" />
+      <workItem from="1633585679120" duration="39592000" />
     </task>
     <servers />
   </component>
@@ -161,12 +162,7 @@
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/admin/class-woocommerce-utm-tracking-admin.php</url>
           <line>169</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/admin/class-woocommerce-utm-tracking-admin.php</url>
-          <line>201</line>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

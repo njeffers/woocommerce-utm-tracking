@@ -142,14 +142,6 @@ class Woocommerce_Utm_Tracking_Admin {
 
 			$value = get_post_meta( $post->ID, 'woocommerce_utm_' . $meta_key, true );
 
-			if( $meta_key == 'publisher_id' ){
-
-//				$publisher_array = revoffers_get_publisher_array();
-
-//				if( array_key_exists( (int) $value, $publisher_array ) ){
-//					$value .= ' (' . $publisher_array[$value] . ')';
-//				}
-			}
 			if( $value ){
 				echo '<tr>';
 				echo '<td class="styled-table-key">' . $meta_key . '</td>';
@@ -164,20 +156,29 @@ class Woocommerce_Utm_Tracking_Admin {
 
 	}
 
+
+	public function woocomerce_utm_add_utms_to_order_sanity_checks( $order_id, $variables, $nonce ){
+
+	}
+
 	public function woocomerce_utm_add_utms_to_order()
 	{
 
-		$order_id   = sanitize_text_field( (int) $_REQUEST[ 'order_id' ] );
-//		$variables = $_REQUEST[ 'variables' ];
-		$variables = $_REQUEST[ 'variables' ];
-		$nonce      = sanitize_text_field( $_REQUEST[ 'nonce' ] );
+		// @todo - make "sanity checks" function to check all these and die if necessary
 
-		if ( ! $order_id || ! $variables || ! $nonce ) {
-			wp_die( __( 'Missing required values.', 'woocommerce' ) );
+
+		if ( ! isset( $_REQUEST[ 'order_id' ] ) || ! isset( $_REQUEST[ 'variables' ] ) || ! isset( $_REQUEST[ 'nonce' ] ) ) {
+			wp_die( __( 'Missing required values.', 'woocommerce-utm' ) );
 		}
 
+
+		$order_id   = sanitize_text_field( (int) $_REQUEST[ 'order_id' ] );
+		$variables   = sanitize_text_field( $_REQUEST[ 'variables' ] );
+		$nonce   = sanitize_text_field( $_REQUEST[ 'nonce' ] ) ;
+
+
 		if ( ! wp_verify_nonce( sanitize_text_field( $nonce ), 'woocommerce_utm_' . $order_id ) ) {
-			wp_die( __( 'Nonce Failed.', 'woocommerce' ) );
+			wp_die( __( 'Nonce Failed.', 'woocommerce-utm' ) );
 		}
 
 
@@ -192,10 +193,20 @@ class Woocommerce_Utm_Tracking_Admin {
 
 		do_action( 'woocommerce_utm_variables_added_to_order', $order_id, $variables );
 
-		return;
-
 	}
 
+	/**
+	 * Adds a meta key and value to the order if it doesn't already exist
+	 *
+	 * @param $order_id
+	 * @param $name
+	 * @param $value
+	 * @param $utm_tracking_keys
+	 *
+	 * @return bool|int
+	 * @author Nick Jeffers
+	 * @url    github.com/njeffers
+	 */
 	public function add_meta_key_to_order( $order_id, $name, $value, $utm_tracking_keys ){
 
 		// new key, who dis? - make sure it's an approved key...
