@@ -7,7 +7,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -22,13 +22,12 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="7e285def-da0c-448f-b460-79cb540ece65" name="localhost" />
     </servers>
   </component>
-  <component name="PhpWebServerValidation" path_to_validation_script="D:\wamp64\www\wordpress\" selected_validation_type="LOCAL" web_path_to_validation_script="http://localhost/wordpress/:80" />
+  <component name="PhpWebServerValidation" path_to_validation_script="D:\wamp64\www\wordpress\" selected_validation_type="LOCAL" web_path_to_validation_script="http://localhost:80" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
@@ -75,12 +74,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/bootstrap.php" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\wamp64\www\wordpress\wp-content\plugins\woocommerce-utm-tracking\tests" />
       <recent name="D:\wamp64\www\wordpress\wp-content\plugins\woocommerce-utm-tracking" />
       <recent name="D:\wamp64\www\wordpress\wp-content\plugins\woocommerce-utm-tracking\bin" />
     </key>
@@ -88,26 +89,60 @@
       <recent name="D:\wamp64\www\wordpress\wp-content\plugins\woocommerce-utm-tracking\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.phpunit.xml.dist">
-    <configuration name="Test_Sample.test_example" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Test_Sample" file="$PROJECT_DIR$/tests/class-test-sample.php" method="test_example" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key">
+    <configuration name="Test_Sample.test_add_meta_key_to_order__failure_adding_invalid_key" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order__failure_adding_invalid_key" scope="Method" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_meta_key_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order__failure_adding_invalid_key" scope="Method" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UTM_add_utms_to_order" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" scope="Class" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UTM_add_utms_to_order.test_confirm_metas_added_successfully" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_confirm_metas_added_successfully" scope="Method" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UTM_add_utms_to_order.test_confirm_order_id_is_int" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_confirm_order_id_is_int" scope="Method" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_fail_if_nonce_bad" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UTM_add_utms_to_order.test_fail_if_order_id_isnt_order_post_type" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_fail_if_order_id_isnt_order_post_type" scope="Method" use_alternative_bootstrap_file="true" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" />
       <method v="2" />
     </configuration>
-    <configuration name="Unnamed" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" nameIsGenerated="true" filter_connections="FILTER" server_name="localhost" session_id="PHPSTORM">
+    <configuration name="PHPUNIT" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" filter_connections="FILTER" server_name="localhost" session_id="PHPSTORM">
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHP Remote Debug.Unnamed" />
+      <item itemvalue="PHP Remote Debug.PHPUNIT" />
       <item itemvalue="PHPUnit.phpunit.xml.dist" />
-      <item itemvalue="PHPUnit.Test_Sample.test_example" />
+      <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__failure_adding_invalid_key" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_order_id_isnt_order_post_type" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_order_id_is_int" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_metas_added_successfully" />
+      <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.Test_Sample.test_example" />
+        <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key" />
+        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_metas_added_successfully" />
+        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_order_id_is_int" />
+        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" />
+        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order" />
       </list>
     </recent_temporary>
   </component>
@@ -119,7 +154,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633585677921</updated>
-      <workItem from="1633585679120" duration="24958000" />
+      <workItem from="1633585679120" duration="48371000" />
+      <workItem from="1633914068070" duration="7519000" />
+      <workItem from="1633925931358" duration="2385000" />
+      <workItem from="1633928362369" duration="617000" />
     </task>
     <servers />
   </component>
@@ -130,11 +168,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/tests/class-test-sample.php</url>
-          <line>41</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/admin/class-woocommerce-utm-tracking-admin.php</url>
+          <line>123</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/woocommerce_utm_tracking@phpunit_xml_dist.xml" NAME="phpunit.xml.dist Coverage Results" MODIFIED="1633749932443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
