@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Provide a admin area view for the plugin
+ * Provide an admin area view for the plugin
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
@@ -11,6 +11,34 @@
  * @package    Woocommerce_Utm_Tracking
  * @subpackage Woocommerce_Utm_Tracking/admin/partials
  */
+
+	$post_id = (int) $_GET['post'];
+
 ?>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<table class="styled-table">
+    <thead>
+    <tr>
+        <th>Key</td>
+        <th>Value</td>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach( Woocommerce_Utm_Tracking::get_tracking_meta_keys()  as $meta_key ) {
+
+        $value = get_post_meta( $post_id, '_woocommerce_utm_' . $meta_key, true );
+
+        if( $value ){
+    ?>
+        <tr>
+            <td class="styled-table-key"><?php echo $meta_key; ?></td>
+            <td class="styled-table-value"><?php echo $value; ?></td>
+        </tr>
+    <?php
+        }
+
+    }
+    ?>
+    </tbody>
+</table>
