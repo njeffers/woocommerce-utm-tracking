@@ -14,11 +14,15 @@ php:
   - 7.4snapshot
   - 7.3
   - 7.2
+  - 7.1
+  - 7.0
 
 # Test against the latest version of WordPress and one version back.
 env:
   - WP_VERSION=latest
   - WP_VERSION=5.7
+  - WP_VERSION=5.6
+  - WP_VERSION=5.5
 
 # Customize the build matrix.
 matrix:
@@ -75,5 +79,5 @@ script:
       ./vendor/bin/phpunit
 
       # Optionally run the tests again in a multisite environment
-      #WP_MULTISITE=1 ./vendor/bin/phpunit
+      WP_MULTISITE=1 ./vendor/bin/phpunit
     fi
