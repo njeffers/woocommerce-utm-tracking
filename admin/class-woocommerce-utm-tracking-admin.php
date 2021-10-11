@@ -110,6 +110,12 @@ class Woocommerce_Utm_Tracking_Admin {
 	}
 
 
+	/**
+	 * Add our metabax to the Edit Order screen
+	 *
+	 * @author Nick Jeffers
+	 * @url    github.com/njeffers
+	 */
 	public function woocomerce_utm_add_order_tracking_metabox() {
 		add_meta_box(
 			'woocomerce-utm-order-tracking',
@@ -122,12 +128,16 @@ class Woocommerce_Utm_Tracking_Admin {
 	}
 
 
-
-
+	/**
+	 * Callback function from woocomerce_utm_add_order_tracking_metabox()
+	 *
+	 * @author Nick Jeffers
+	 * @url    github.com/njeffers
+	 */
 	public function woocommerce_utm_add_order_tracking_metabox_callback()
 	{
 
-        global $post;
+		$post_id = (int) $_GET['post'];
 
 
 		echo '<table class="styled-table">';
@@ -140,7 +150,7 @@ class Woocommerce_Utm_Tracking_Admin {
 		echo '<tbody>';
 		foreach( Woocommerce_Utm_Tracking::get_tracking_meta_keys()  as $meta_key ) {
 
-			$value = get_post_meta( $post->ID, 'woocommerce_utm_' . $meta_key, true );
+			$value = get_post_meta( $post_id, 'woocommerce_utm_' . $meta_key, true );
 
 			if( $value ){
 				echo '<tr>';
@@ -166,18 +176,29 @@ class Woocommerce_Utm_Tracking_Admin {
 
 		// @todo - make "sanity checks" function to check all these and die if necessary
 
-
 		if ( ! isset( $_REQUEST[ 'order_id' ] ) || ! isset( $_REQUEST[ 'variables' ] ) || ! isset( $_REQUEST[ 'nonce' ] ) ) {
 			wp_die( __( 'Missing required values.', 'woocommerce-utm' ) );
 		}
 
 
-		$order_id   = sanitize_text_field( (int) $_REQUEST[ 'order_id' ] );
+//		$order_id   = sanitize_text_field( (int) $_REQUEST[ 'order_id' ] );
+		$order_id   = (int) $_REQUEST[ 'order_id' ];
 		$variables   = sanitize_text_field( $_REQUEST[ 'variables' ] );
 		$nonce   = sanitize_text_field( $_REQUEST[ 'nonce' ] ) ;
 
+		echo '$order_id: ' . $order_id;
+		echo '<pre> ' . print_r($order_id, true ) . '</pre>';
 
-		if ( ! wp_verify_nonce( sanitize_text_field( $nonce ), 'woocommerce_utm_' . $order_id ) ) {
+		if( ! is_int( $order_id ) || $order_id < 1 ){
+			wp_die( __( 'Bad order_id value.', 'woocommerce-utm' ) );
+		}
+
+		if(  'shop_order' != get_post_type( $order_id ) ){
+			wp_die( __( 'order_id isn\'t an Order post type.', 'woocommerce-utm' ) );
+		}
+
+
+		if ( ! wp_verify_nonce( $nonce, 'woocommerce_utm_' . $order_id ) ) {
 			wp_die( __( 'Nonce Failed.', 'woocommerce-utm' ) );
 		}
 

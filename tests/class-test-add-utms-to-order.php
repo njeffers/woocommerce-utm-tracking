@@ -27,8 +27,19 @@ class Test_UTM_add_utms_to_order extends WP_Ajax_UnitTestCase {
 		);
 	}
 
-	function create_post_return_id(){
-		$Order = $this->factory()->post->create_and_get();
+	/**
+	 * Create and return a new post ID
+	 *
+	 * @return int
+	 * @author Nick Jeffers
+	 * @url    github.com/njeffers
+	 */
+	function create_post_return_id( $post_type = 'shop_order' ){
+		$Order = $this->factory()->post->create_and_get(
+			array(
+				'post_type' => $post_type
+			)
+		);
 
 		return (int) $Order->ID;
 	}
@@ -39,11 +50,12 @@ class Test_UTM_add_utms_to_order extends WP_Ajax_UnitTestCase {
 	 *
 	 * @author Nick Jeffers
 	 * @url    github.com/njeffers
+	 * @covers Woocommerce_Utm_Tracking_Admin::woocomerce_utm_add_utms_to_order()
 	 */
-	public function test_fail_if_missing_order_id(){
+	public function test_fail_if_missing_values(){
 
 
-		$_REQUEST[ 'order_id' ] = $this->create_post_return_id();
+		$_POST[ 'order_id' ] = $this->create_post_return_id();
 
 		try {
 			$this->_handleAjax( 'add_utms_to_order' );
@@ -58,39 +70,85 @@ class Test_UTM_add_utms_to_order extends WP_Ajax_UnitTestCase {
 
 	// @todo make sure it's an actual order post_type
 	public function test_fail_if_order_id_isnt_order_post_type(){
-		
-	}
 
-	// @todo make sure order_id is an int
-	public function test_confirm_order_id_is_int(){}
-	public function test_fail_if_nonce_bad(){
-
-		$_REQUEST[ 'order_id' ] = 123;
-		$_REQUEST[ 'variables' ] = 'test';
-		$_REQUEST[ 'nonce' ] = 'nonce';
+		// create a plain post (not a shop_order)
+		$_POST[ 'order_id' ] = $this->create_post_return_id( 'post' );
+		$_POST[ 'variables' ] = 'test';
+		$_POST[ 'nonce' ] = wp_create_nonce('woocommerce_utm_' . $_POST[ 'order_id' ] );
 
 		try {
 			$this->_handleAjax( 'add_utms_to_order' );
-		} catch ( WPAjaxDieStopException $e ) {
+		} catch ( WPAjaxDieContinueException $e ) {
+			// We expected this, do nothing.
+		}
+
+		$this->assertEquals( 'order_id isn\'t an Order post type.', $e->getMessage() );
+	}
+
+	/**
+	 * Make sure we fail if order id is less than 1
+	 *
+	 * @author Nick Jeffers
+	 * @url    github.com/njeffers
+	 */
+	public function test_confirm_order_id_greater_than_zero(){
+
+		$_POST[ 'order_id' ] = 0;
+		$_POST[ 'variables' ] = 'test';
+		$_POST[ 'nonce' ] = wp_create_nonce('woocommerce_utm_' . $_POST[ 'order_id' ] );
+
+		try {
+			$this->_handleAjax( 'add_utms_to_order' );
+		} catch ( WPAjaxDieContinueException $e ) {
+			// We expected this, do nothing.
+		}
+
+		$this->assertEquals( 'Bad order_id value.', $e->getMessage() );
+
+	}
+
+	/**
+	 * Make sure we bail if we order_id isn't an int and greater than 0
+	 *
+	 * @author Nick Jeffers
+	 * @url    github.com/njeffers
+	 */
+	public function test_confirm_order_id_is_int(){
+
+		$_POST[ 'order_id' ] = 'somestring';
+		$_POST[ 'variables' ] = 'test';
+		$_POST[ 'nonce' ] = wp_create_nonce('woocommerce_utm_' . $_POST[ 'order_id' ] );
+
+		try {
+			$this->_handleAjax( 'add_utms_to_order' );
+		} catch ( WPAjaxDieContinueException $e ) {
+			// We expected this, do nothing.
+		}
+
+		$this->assertEquals( 'Bad order_id value.', $e->getMessage() );
+
+	}
+
+	/**
+	 * @author Nick Jeffers
+	 * @url    github.com/njeffers
+	 * @covers Woocommerce_Utm_Tracking_Admin::woocomerce_utm_add_utms_to_order()
+	 */
+	public function test_fail_if_nonce_bad(){
+
+		$_POST[ 'order_id' ] = $this->create_post_return_id();
+		$_POST[ 'variables' ] = 'test';
+		$_POST[ 'nonce' ] = 'bad_nonce';
+
+		try {
+			$this->_handleAjax( 'add_utms_to_order' );
+		} catch ( WPAjaxDieContinueException $e ) {
 			// We expected this, do nothing.
 		}
 
 		$this->assertEquals( 'Nonce Failed.', $e->getMessage() );
 
-
-//		if ( ! wp_verify_nonce( sanitize_text_field( $nonce ), 'woocommerce_utm_' . $order_id ) ) {
-
-
-		}
-
-
-	/*
-	 * @todo
-	 * - fail if nonce is bad
-	 * -
-	 *
-	 */
-
+	}
 
 
 
