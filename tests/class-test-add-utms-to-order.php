@@ -68,7 +68,12 @@ class Test_UTM_add_utms_to_order extends WP_Ajax_UnitTestCase {
 	}
 
 
-	// @todo make sure it's an actual order post_type
+	/**
+	 * Make sure we get an exception if the order_id isn't a shop_order
+	 *
+	 * @author Nick Jeffers
+	 * @url    github.com/njeffers
+	 */
 	public function test_fail_if_order_id_isnt_order_post_type(){
 
 		// create a plain post (not a shop_order)
@@ -79,6 +84,8 @@ class Test_UTM_add_utms_to_order extends WP_Ajax_UnitTestCase {
 		try {
 			$this->_handleAjax( 'add_utms_to_order' );
 		} catch ( WPAjaxDieContinueException $e ) {
+			// We expected this, do nothing.
+		} catch ( WPAjaxDieStopException $e ) {
 			// We expected this, do nothing.
 		}
 
@@ -100,6 +107,8 @@ class Test_UTM_add_utms_to_order extends WP_Ajax_UnitTestCase {
 		try {
 			$this->_handleAjax( 'add_utms_to_order' );
 		} catch ( WPAjaxDieContinueException $e ) {
+			// We expected this, do nothing.
+		} catch ( WPAjaxDieStopException $e ) {
 			// We expected this, do nothing.
 		}
 
@@ -123,6 +132,8 @@ class Test_UTM_add_utms_to_order extends WP_Ajax_UnitTestCase {
 			$this->_handleAjax( 'add_utms_to_order' );
 		} catch ( WPAjaxDieContinueException $e ) {
 			// We expected this, do nothing.
+		} catch ( WPAjaxDieStopException $e ) {
+			// We expected this, do nothing.
 		}
 
 		$this->assertEquals( 'Bad order_id value.', $e->getMessage() );
@@ -143,6 +154,8 @@ class Test_UTM_add_utms_to_order extends WP_Ajax_UnitTestCase {
 		try {
 			$this->_handleAjax( 'add_utms_to_order' );
 		} catch ( WPAjaxDieContinueException $e ) {
+			// We expected this, do nothing.
+		} catch ( WPAjaxDieStopException $e ) {
 			// We expected this, do nothing.
 		}
 
