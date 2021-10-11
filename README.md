@@ -2,6 +2,8 @@
 
 This plugin allows for basic UTM Tracking and viewing in WooCommerce Orders.
 
+![alt text](utm.jpg)
+
 Default UTM's tracked:
 - utm_source
 - utm_campaign
