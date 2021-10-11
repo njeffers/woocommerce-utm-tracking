@@ -16,30 +16,6 @@
         "wp-coding-standards/wpcs": "*"
     },
     "scripts": {
-        "post-install-cmd2": [
-            "npm install --save-dev autoprefixer browser-sync css-mqpacker cssnano gulp gulp-concat gulp-deporder gulp-imagemin gulp-newer gulp-notify gulp-postcss gulp-sass gulp-shell gulp-strip-debug gulp-uglify gulp-util postcss-assets gulp-zip"
-        ],
-        "post-update-cmd2": [
-            "npm update"
-        ],
-        "build": [
-            "gulp build && gulp zip"
-        ],
-        "build-containers": [
-            "docker-compose up -d"
-        ],
-        "kill-containers": [
-            "docker stop $(docker ps -aq) && docker rm $(docker ps -aq) && docker rmi $(docker images -q)"
-        ],
-        "build-wp": [
-            "composer build-containers && sleep 10 && docker-compose run --rm wp-cli install-wp"
-        ],
-        "watch": [
-            "gulp"
-        ],
-        "make-env": [
-            "composer install && composer build-wp && composer watch"
-        ],
         "test": [
             "vendor/bin/phpunit"
         ],
@@ -49,7 +25,6 @@
         "test-wp-setup": [
             "bash bin/install-wp-tests.sh wordpress_test root '' localhost latest true"
         ],
-        "phpcs": "phpcs --standard=phpcs.xml.dist",
-        "test2": "@php ./vendor/phpunit/phpunit/phpunit"
+        "phpcs": "phpcs --standard=phpcs.ruleset.xml"
     }
 }
