@@ -230,9 +230,7 @@ class Woocommerce_Utm_Tracking {
 			'utm_campaign',
 			'utm_content',
 			'utm_medium',
-			'utm_term',
-			'publisher_id',
-			'offer_id',
+			'utm_term'
 		) );
 	}
 
