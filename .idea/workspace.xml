@@ -126,15 +126,15 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHP Remote Debug.PHPUNIT" />
-      <item itemvalue="PHPUnit.phpunit.xml.dist" />
       <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__failure_adding_invalid_key" />
-      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_order_id_isnt_order_post_type" />
+      <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_metas_added_successfully" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_order_id_is_int" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" />
-      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_metas_added_successfully" />
-      <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_order_id_isnt_order_post_type" />
+      <item itemvalue="PHPUnit.phpunit.xml.dist" />
+      <item itemvalue="PHP Remote Debug.PHPUNIT" />
     </list>
     <recent_temporary>
       <list>
