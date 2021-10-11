@@ -19,20 +19,22 @@ php:
 env:
   - WP_VERSION=latest
   - WP_VERSION=5.7
+  - WP_VERSION=5.6
+  - WP_VERSION=5.5
 
 # Customize the build matrix.
 matrix:
   fast_finish: true
   include:
     # Run PHP_CodeSniffer
-#    - name: Coding standards
-#      php: 7.3
-#      env: WP_VERSION=latest WP_TRAVISCI=phpcs
+    #    - name: Coding standards
+    #      php: 7.3
+    #      env: WP_VERSION=latest WP_TRAVISCI=phpcs
 
     # Canary for our oldest-supported version
-#    - name: Legacy
-#      php: 5.6
-#      env: WP_VERSION=4.9
+    #    - name: Legacy
+    #      php: 5.6
+    #      env: WP_VERSION=4.9
 
     # Nightly versions of PHP and WordPress.
     - name: Bleeding edge
@@ -75,5 +77,5 @@ script:
       ./vendor/bin/phpunit
 
       # Optionally run the tests again in a multisite environment
-      #WP_MULTISITE=1 ./vendor/bin/phpunit
+      WP_MULTISITE=1 ./vendor/bin/phpunit
     fi
