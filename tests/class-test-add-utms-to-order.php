@@ -1,13 +1,12 @@
 <?php
 /**
- * Class Test_Sample
+ * Class Test_UTM_add_utms_to_order
  *
- * @package My_Plugin
+ * AJAX tests for add_utms_to_order()
+ *
+ * @package Woocommerce_Utm_Tracking
  */
 
-/**
- * Sample test case.
- */
 class Test_UTM_add_utms_to_order extends WP_Ajax_UnitTestCase {
 
 	public function setUp()

@@ -1,13 +1,12 @@
 <?php
 /**
- * Class Test_Sample
+ * Class Test_UTM_add_meta_key_to_order
  *
- * @package My_Plugin
+ * Tests for add_meta_key_to_order()
+ *
+ * @package Woocommerce_Utm_Tracking
  */
 
-/**
- * Sample test case.
- */
 class Test_UTM_add_meta_key_to_order extends WP_UnitTestCase {
 
 	public function setUp()
