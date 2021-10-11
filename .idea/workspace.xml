@@ -74,7 +74,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../woocommerce-utm-tracking" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/bootstrap.php" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -89,25 +89,25 @@
       <recent name="D:\wamp64\www\wordpress\wp-content\plugins\woocommerce-utm-tracking\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Remote Debug.PHPUNIT">
+  <component name="RunManager" selected="PHPUnit.Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key">
     <configuration name="Test_Sample.test_add_meta_key_to_order__failure_adding_invalid_key" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order__failure_adding_invalid_key" scope="Method" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_meta_key_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order__failure_adding_invalid_key" scope="Method" use_alternative_bootstrap_file="true" />
       <method v="2" />
     </configuration>
     <configuration name="Test_UTM_add_utms_to_order" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" scope="Class" use_alternative_bootstrap_file="true" />
       <method v="2" />
     </configuration>
+    <configuration name="Test_UTM_add_utms_to_order.test_confirm_metas_added_successfully" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_confirm_metas_added_successfully" scope="Method" use_alternative_bootstrap_file="true" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test_UTM_add_utms_to_order.test_confirm_order_id_is_int" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_confirm_order_id_is_int" scope="Method" use_alternative_bootstrap_file="true" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_UTM_add_utms_to_order.test_confirm_order_id_is_zero" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_confirm_order_id_is_zero" scope="Method" use_alternative_bootstrap_file="true" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_UTM_add_utms_to_order.test_fail_if_missing_values" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_fail_if_missing_values" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -132,17 +132,17 @@
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_order_id_isnt_order_post_type" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_order_id_is_int" />
-      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_order_id_is_zero" />
-      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_missing_values" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_metas_added_successfully" />
+      <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key" />
+        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_metas_added_successfully" />
         <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_order_id_is_int" />
         <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" />
         <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order" />
-        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_missing_values" />
-        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_order_id_is_zero" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +156,8 @@
       <updated>1633585677921</updated>
       <workItem from="1633585679120" duration="48371000" />
       <workItem from="1633914068070" duration="7519000" />
-      <workItem from="1633925931358" duration="1762000" />
+      <workItem from="1633925931358" duration="2385000" />
+      <workItem from="1633928362369" duration="617000" />
     </task>
     <servers />
   </component>

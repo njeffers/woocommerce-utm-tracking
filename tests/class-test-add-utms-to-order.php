@@ -164,6 +164,31 @@ class Test_UTM_add_utms_to_order extends WP_Ajax_UnitTestCase {
 	}
 
 
+	/**
+	 * Confirm that proper values are stored in the order meta
+	 *
+	 * @author Nick Jeffers
+	 * @url    github.com/njeffers
+	 */
+	public function test_confirm_metas_added_successfully(){
+
+		$_POST[ 'order_id' ] = $this->create_post_return_id();
+		$_POST[ 'variables' ] = array('utm_source' => 'utm_source_value' );
+		$_POST[ 'nonce' ] = wp_create_nonce('woocommerce_utm_' . $_POST[ 'order_id' ] );
+
+		try {
+			$this->_handleAjax( 'add_utms_to_order' );
+		} catch ( WPAjaxDieContinueException $e ) {
+			// We expected this, do nothing.
+		} catch ( WPAjaxDieStopException $e ) {
+			// We expected this, do nothing.
+		}
+
+		$stored_meta_value = get_post_meta( $_POST[ 'order_id' ], '_woocommerce_utm_utm_source', true );
+
+		$this->assertEquals( 'utm_source_value', $stored_meta_value );
+
+	}
 
 
 

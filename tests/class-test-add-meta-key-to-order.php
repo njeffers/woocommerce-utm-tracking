@@ -77,7 +77,7 @@ class Test_UTM_add_meta_key_to_order extends WP_UnitTestCase {
 		$test = new Woocommerce_Utm_Tracking_Admin( 'woocommerce-utm-tracking', '1.0.0' );
 
 		$this->assertFalse(
-			$test->add_meta_key_to_order( 1231231, 'invalid_utm_field', 'invalid_utm_value', $this->get_utm_tracking_keys() )
+			$test->add_meta_key_to_order( $order_id, 'invalid_utm_field', 'invalid_utm_value', $this->get_utm_tracking_keys() )
 		);
 
 	}
