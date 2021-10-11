@@ -18,21 +18,21 @@ php:
 # Test against the latest version of WordPress and one version back.
 env:
   - WP_VERSION=latest
-  - WP_VERSION=5.2
+  - WP_VERSION=5.7
 
 # Customize the build matrix.
 matrix:
   fast_finish: true
   include:
     # Run PHP_CodeSniffer
-    - name: Coding standards
-      php: 7.3
-      env: WP_VERSION=latest WP_TRAVISCI=phpcs
+#    - name: Coding standards
+#      php: 7.3
+#      env: WP_VERSION=latest WP_TRAVISCI=phpcs
 
     # Canary for our oldest-supported version
-    - name: Legacy
-      php: 5.6
-      env: WP_VERSION=4.9
+#    - name: Legacy
+#      php: 5.6
+#      env: WP_VERSION=4.9
 
     # Nightly versions of PHP and WordPress.
     - name: Bleeding edge
