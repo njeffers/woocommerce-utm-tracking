@@ -52,7 +52,6 @@ class Woocommerce_Utm_Tracking_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
-
 	}
 
 	/**
@@ -61,18 +60,6 @@ class Woocommerce_Utm_Tracking_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Woocommerce_Utm_Tracking_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Woocommerce_Utm_Tracking_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/woocommerce-utm-tracking-public.css', array(), $this->version, 'all' );
 
@@ -85,21 +72,7 @@ class Woocommerce_Utm_Tracking_Public {
 	 */
 	public function enqueue_scripts() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Woocommerce_Utm_Tracking_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Woocommerce_Utm_Tracking_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/woocommerce-utm-tracking-public.js', array('jquery'), $this->version, true );
-
 
         if( ! Woocommerce_Utm_Tracking::woocommerce_enabled() || ! is_wc_endpoint_url( 'order-received' ) ){
             return;

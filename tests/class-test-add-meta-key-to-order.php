@@ -27,8 +27,19 @@ class Test_UTM_add_meta_key_to_order extends WP_UnitTestCase {
 		);
 	}
 
-	function create_post_return_id(){
-		$Order = $this->factory()->post->create_and_get();
+	/**
+	 * Create and return a new post ID
+	 *
+	 * @return int
+	 * @author Nick Jeffers
+	 * @url    github.com/njeffers
+	 */
+	function create_post_return_id( $post_type = 'shop_order' ){
+		$Order = $this->factory()->post->create_and_get(
+			array(
+				'post_type' => $post_type
+			)
+		);
 
 		return (int) $Order->ID;
 	}
