@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d835d75-650b-421d-89b9-4411a00a0ee6" name="Changes" comment="" />
+    <list default="true" id="5d835d75-650b-421d-89b9-4411a00a0ee6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/install-wp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/install-wp.sh" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +27,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="7e285def-da0c-448f-b460-79cb540ece65" name="localhost" />
@@ -75,7 +79,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/bootstrap.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -127,15 +131,15 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="PHP Remote Debug.PHPUNIT" />
       <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__failure_adding_invalid_key" />
+      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_order_id_isnt_order_post_type" />
+      <item itemvalue="PHPUnit.phpunit.xml.dist" />
       <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_metas_added_successfully" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_order_id_is_int" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" />
-      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_order_id_isnt_order_post_type" />
-      <item itemvalue="PHPUnit.phpunit.xml.dist" />
-      <item itemvalue="PHP Remote Debug.PHPUNIT" />
     </list>
     <recent_temporary>
       <list>
@@ -159,6 +163,7 @@
       <workItem from="1633914068070" duration="7519000" />
       <workItem from="1633925931358" duration="2385000" />
       <workItem from="1633928362369" duration="2182000" />
+      <workItem from="1634014905882" duration="2515000" />
     </task>
     <servers />
   </component>
