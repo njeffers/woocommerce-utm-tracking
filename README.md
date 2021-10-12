@@ -57,15 +57,17 @@ docker-compose -f docker-compose.phpunit.yml run --rm wordpress_phpunit phpunit
 ```
 /usr/local/bin/docker-entrypoint.sh: exec: line 15: install-wp: Permission denied
 ```
-
+Run:
 ```
 chmod +x install-wp.sh
 ```
 
+---
 
 ```
 Error response from daemon: OCI runtime create failed: container_linux.go:380: starting container process caused: exec: "/app/bin/install-wp-tests.sh": permission denied: unknown
 ```
+Run:
 ```
 chmod +x install-wp-tests.sh
 ```

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d835d75-650b-421d-89b9-4411a00a0ee6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/install-wp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/install-wp.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +94,7 @@
       <recent name="D:\wamp64\www\wordpress\wp-content\plugins\woocommerce-utm-tracking\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key">
+  <component name="RunManager" selected="Docker.docker-compose.yml.phpmyadmin: Compose Deployment">
     <configuration name="Test_Sample.test_add_meta_key_to_order__failure_adding_invalid_key" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_Sample" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order__failure_adding_invalid_key" scope="Method" use_alternative_bootstrap_file="true" />
       <method v="2" />
@@ -103,20 +103,12 @@
       <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_meta_key_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-meta-key-to-order.php" method="test_add_meta_key_to_order__failure_adding_invalid_key" scope="Method" use_alternative_bootstrap_file="true" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_UTM_add_utms_to_order" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" scope="Class" use_alternative_bootstrap_file="true" />
-      <method v="2" />
-    </configuration>
     <configuration name="Test_UTM_add_utms_to_order.test_confirm_metas_added_successfully" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_confirm_metas_added_successfully" scope="Method" use_alternative_bootstrap_file="true" />
       <method v="2" />
     </configuration>
     <configuration name="Test_UTM_add_utms_to_order.test_confirm_order_id_is_int" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner bootstrap_file="$PROJECT_DIR$/tests/bootstrap.php" class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_confirm_order_id_is_int" scope="Method" use_alternative_bootstrap_file="true" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Test_UTM_add_utms_to_order" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" method="test_fail_if_nonce_bad" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="Test_UTM_add_utms_to_order.test_fail_if_order_id_isnt_order_post_type" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -130,24 +122,50 @@
     <configuration name="PHPUNIT" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" filter_connections="FILTER" server_name="localhost" session_id="PHPSTORM">
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.composer: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="composer" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.phpmyadmin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="phpmyadmin" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Docker.docker-compose.yml.composer: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.phpmyadmin: Compose Deployment" />
       <item itemvalue="PHP Remote Debug.PHPUNIT" />
       <item itemvalue="PHPUnit.Test_Sample.test_add_meta_key_to_order__failure_adding_invalid_key" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_order_id_isnt_order_post_type" />
       <item itemvalue="PHPUnit.phpunit.xml.dist" />
       <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key" />
-      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_metas_added_successfully" />
       <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_order_id_is_int" />
-      <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml.phpmyadmin: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.composer: Compose Deployment" />
         <item itemvalue="PHPUnit.Test_UTM_add_meta_key_to_order.test_add_meta_key_to_order__failure_adding_invalid_key" />
         <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_metas_added_successfully" />
         <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_confirm_order_id_is_int" />
-        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order.test_fail_if_nonce_bad" />
-        <item itemvalue="PHPUnit.Test_UTM_add_utms_to_order" />
       </list>
     </recent_temporary>
   </component>
@@ -163,12 +181,24 @@
       <workItem from="1633914068070" duration="7519000" />
       <workItem from="1633925931358" duration="2385000" />
       <workItem from="1633928362369" duration="2182000" />
-      <workItem from="1634014905882" duration="2515000" />
+      <workItem from="1634014905882" duration="3177000" />
+      <workItem from="1634018508353" duration="1090000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

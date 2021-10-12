@@ -50,6 +50,19 @@ services:
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - mysql
+    ports:
+      - "8181:80"
+    networks:
+      - "back"
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_PORT_3306_TCP_ADDR: db
+      MYSQL_ROOT_PASSWORD: ""
+
 networks:
   front: {}
   back: {}
