@@ -180,7 +180,7 @@ class Woocommerce_Utm_Tracking_Admin {
 			return false;
 		}
 
-		return update_post_meta( $order_id, '_woocommerce_utm_' . $name, $value );
+		return update_post_meta( $order_id, Woocommerce_Utm_Tracking::$meta_key_prefix . $name, $value );
 
 	}
 
@@ -224,7 +224,7 @@ class Woocommerce_Utm_Tracking_Admin {
 
 		if ( 'utm_source' === $column ) {
 			$order = wc_get_order( $post->ID );
-			$value = $order->get_meta( '_woocommerce_utm_utm_source' );
+			$value = $order->get_meta( Woocommerce_Utm_Tracking::$meta_key_prefix . 'utm_source' );
 
 			echo $value;
 		}

@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5d835d75-650b-421d-89b9-4411a00a0ee6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/class-woocommerce-utm-tracking-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/class-woocommerce-utm-tracking-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/partials/woocommerce-utm-tracking-admin-display.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/partials/woocommerce-utm-tracking-admin-display.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/class-woocommerce-utm-tracking.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class-woocommerce-utm-tracking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/class-test-add-utms-to-order.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +184,7 @@
       <workItem from="1633928362369" duration="2182000" />
       <workItem from="1634014905882" duration="3177000" />
       <workItem from="1634018508353" duration="1090000" />
+      <workItem from="1634049552543" duration="651000" />
     </task>
     <servers />
   </component>
@@ -199,6 +201,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

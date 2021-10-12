@@ -57,6 +57,8 @@ class Woocommerce_Utm_Tracking {
 	 */
 	protected $version;
 
+    public static $meta_key_prefix = '_woocommerce_utm_';
+
 	/**
 	 * Define the core functionality of the plugin.
 	 *

@@ -27,7 +27,7 @@
     <?php
     foreach( Woocommerce_Utm_Tracking::get_tracking_meta_keys()  as $meta_key ) {
 
-        $value = get_post_meta( $post_id, '_woocommerce_utm_' . $meta_key, true );
+        $value = get_post_meta( $post_id, Woocommerce_Utm_Tracking::$meta_key_prefix . $meta_key, true );
 
         if( $value ){
     ?>

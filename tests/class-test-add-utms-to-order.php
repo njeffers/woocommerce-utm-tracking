@@ -183,7 +183,7 @@ class Test_UTM_add_utms_to_order extends WP_Ajax_UnitTestCase {
 			// We expected this, do nothing.
 		}
 
-		$stored_meta_value = get_post_meta( $_POST[ 'order_id' ], '_woocommerce_utm_utm_source', true );
+		$stored_meta_value = get_post_meta( $_POST[ 'order_id' ], Woocommerce_Utm_Tracking::$meta_key_prefix . 'utm_source', true );
 
 		$this->assertEquals( 'utm_source_value', $stored_meta_value );
 
